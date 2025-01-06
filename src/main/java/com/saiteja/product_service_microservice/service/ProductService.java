@@ -15,12 +15,12 @@ public class ProductService {
 
 
 
-    public void createProduct(ProductRequest productRequest) {
+    public Product createProduct(ProductRequest productRequest) {
         Product product = new Product();
         product.setName(productRequest.name());
         product.setDescription(productRequest.description());
         product.setPrice(productRequest.price());
-        productRepository.save(product);
+        return productRepository.save(product);
     }
 
     public Product getProduct(long id) {
